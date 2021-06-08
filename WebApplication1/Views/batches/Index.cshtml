@@ -4,13 +4,13 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
 
+<hr />
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Add New Batch", "Create")
 </p>
-<table class="table">
-    <tr>
+<table class="table" style=" border: 1px solid #ddd; padding: 8px; border-collapse: collapse; background-color: #96dff7">
+    <tr style="background-color: #61bdf9">
         <th>
             @Html.DisplayNameFor(model => model.batch1)
         </th>

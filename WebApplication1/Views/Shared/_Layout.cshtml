@@ -25,17 +25,22 @@
                     <li>@Html.ActionLink("Batch", "Index", "batches")</li>
                     <li>@Html.ActionLink("Registration", "Index", "registrations")</li>
                     <li>@Html.ActionLink("User", "Index", "users")</li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
 
                 </ul>
                 <ul class="nav navbar-nav right " style="color:white">
-                    @if(Session["UserID"] != null)
+                    @if (Session["UserID"] != null)
                     {
-                    <h4 style="color: white">Hello @Session["UserName"]</h4>
-                    <li>@Html.ActionLink("Logout", "Index", "Login")</li>
+                        <h4 style="color: white">Hello @Session["UserName"]</h4>
+                        
+                        <li>@Html.ActionLink("Logout", "Index", "Login")</li>
 
                     }
-                    else{
-                    <li>@Html.ActionLink("Login", "Index", "Login")</li>
+                    else
+                    {
+                        <li>@Html.ActionLink("Login", "Index", "Login")</li>
                     }
 
                 </ul>
@@ -47,7 +52,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Power by Kasuni Piyumali Wathththage</p>
         </footer>
     </div>
 

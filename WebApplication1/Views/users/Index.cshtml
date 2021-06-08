@@ -4,13 +4,12 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
+<hr />
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Add New User", "Create")
 </p>
-<table class="table">
-    <tr>
+<table class="table" style=" border: 1px solid #ddd; padding: 8px; border-collapse: collapse; background-color: #96dff7">
+    <tr style="background-color: #61bdf9">
         <th>
             @Html.DisplayNameFor(model => model.firstname)
         </th>
@@ -20,28 +19,29 @@
         <th>
             @Html.DisplayNameFor(model => model.username)
         </th>
-      
+
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.firstname)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.lastname)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.username)
-        </td>
-        
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.firstname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.lastname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.username)
+            </td>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+            </td>
+        </tr>
+    }
 
 </table>

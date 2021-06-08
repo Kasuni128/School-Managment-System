@@ -4,20 +4,30 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Login Page</h2>
+
 
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-<div class="form-horizontal">
-    <h4>Login</h4>
-    <hr />
+<div class="form-horizontal" style="background-image: url('../image/bac.jpg'); background-repeat: no-repeat;">
+    <h2 style="font-family:'Agency FB'; color:darkblue">Login Here</h2>
+    <hr>
+
+
+
 
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
     <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <img src="~/image/icon.png" width="80" height="80" />
+        </div>
+    </div>
+
+    <div class="form-group">
+
         @Html.LabelFor(model => model.username, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.username, new { htmlAttributes = new { @class = "form-control" } })
@@ -35,10 +45,18 @@
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Login" class="btn btn-default" />
+            <input type="submit" value="Login" class="btn btn-default" style="color:white; background-color:blue" />
         </div>
     </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <p style="font-size:10px; color:black; font-style:oblique">New User? @Html.ActionLink("Sign Up", "Index", "users/Create")</p>
+        </div>
+    </div>
+
 </div>
+    
 }
 
 <div>
